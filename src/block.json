@@ -40,7 +40,7 @@
 				},
 				"id": {
 					"type": "string",
-					"selector": ".link",
+					"selector": ".xwp-country-card__related-post-link",
 					"source": "attribute",
 					"attribute": "data-post-id"
 				}
