@@ -48,26 +48,28 @@
 	border-top: 1px solid #dcdcde;
 	background-color: #fafafc;
 	padding: 1.5rem;
+
+	.xwp-country-card__related-posts__heading {
+		margin: 0px;
+		font-size: 1.5rem;
+	}
+	
+	.xwp-country-card__related-posts-list {
+		padding-left: 1.5rem;
+	}
+	
+	.xwp-country-card__related-post + xwp-country-card__related-post {
+		margin-top: 1.5rem;
+	}
+	
+	.xwp-country-card__related-post-title {
+		margin: 0px;
+		font-size: 1.5rem;
+	}
+	
+	.xwp-country-card__related-post-excerpt {
+		margin: 0px;
+	}
 }
 
-.xwp-country-card__related-posts__heading {
-	margin: 0px;
-	font-size: 1.5rem;
-}
 
-.xwp-country-card__related-posts-list {
-	padding-left: 1.5rem;
-}
-
-.related-post + .related-post {
-	margin-top: 1.5rem;
-}
-
-.related-post .title {
-	margin: 0px;
-	font-size: 1.5rem;
-}
-
-.related-post .excerpt {
-	margin: 0px;
-}
