@@ -2,14 +2,21 @@
  * WordPress dependencies
  */
 import { edit as editIcon, globe as globeIcon } from '@wordpress/icons';
+
 import { BlockControls, useBlockProps } from '@wordpress/block-editor';
+
 import {
 	ComboboxControl,
 	Placeholder,
 	ToolbarButton,
 	ToolbarGroup,
 } from '@wordpress/components';
+
+import apiFetch from '@wordpress/api-fetch';
+
 import { useEffect, useState } from '@wordpress/element';
+
+
 import { __ } from '@wordpress/i18n';
 
 /**
@@ -21,8 +28,10 @@ import { getEmojiFlag } from './utils';
 
 import Preview from './preview';
 
-export default function Edit( { attributes, setAttributes } ) {
+export default function Edit( { attributes, setAttributes, context } ) {
 	const blockProps = useBlockProps();
+
+	const { postId } = context;
 
 	const { countryCode, relatedPosts } = attributes;
 	const options = Object.keys( countries ).map( ( code ) => ( {
@@ -50,15 +59,11 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	useEffect( () => {
 		async function getRelatedPosts() {
-			const postId = window.location.href.match( /post=([\d]+)/ )[ 1 ];
-			const response = await window.fetch(
-				`/wp-json/wp/v2/posts?search=${ countries[ countryCode ] }&exclude=${ postId }`
-			);
-
-			if ( ! response.ok )
-				throw new Error( `HTTP error! Status: ${ response.status }` );
-
-			const posts = await response.json();
+			const posts = await apiFetch( {
+				path: `/wp/v2/posts?search=${ countries[ countryCode ] }&exclude=${ postId }`,
+			} ).then( ( response ) => {
+				return response;
+			} );
 
 			setAttributes( {
 				relatedPosts:
@@ -71,7 +76,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		}
 
 		getRelatedPosts();
-	}, [ countryCode, setAttributes ] );
+	}, [ countryCode, postId, setAttributes ] );
 
 	return (
 		<div { ...blockProps }>
