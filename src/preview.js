@@ -29,8 +29,13 @@ export default function Preview( { countryCode, relatedPosts } ) {
 			<h3 className="xwp-country-card__heading">
 				{ __( 'Hello from' ) }{ ' ' }
 				<strong>{ countries[ countryCode ] }</strong> (
-				<span className="xwp-country-card__country-code">
-					{ countryCode }
+				<span
+					className="xwp-country-card__country-code"
+					data-country-code={ countryCode }
+				>
+					<abbr title={ countries[ countryCode ] }>
+						{ countryCode }
+					</abbr>
 				</span>
 				), { continentNames[ continents[ countryCode ] ] }!
 			</h3>

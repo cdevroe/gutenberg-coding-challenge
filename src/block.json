@@ -13,8 +13,9 @@
 	"attributes": {
 		"countryCode": {
 			"type": "string",
-			"source": "html",
-			"selector": ".xwp-country-card__country-code"
+			"source": "attribute",
+			"selector": ".xwp-country-card__country-code",
+			"attribute": "data-country-code"
 		},
 		"relatedPosts": {
 			"type": "array",

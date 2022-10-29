@@ -40,6 +40,10 @@
 	font-size: 2rem;
 }
 
+.xwp-country-card__country-code abbr {
+	border-bottom: 2px dotted #000;
+} /* A CSS guru, I am not. */
+
 .xwp-country-card__related-posts {
 	border-top: 1px solid #dcdcde;
 	background-color: #fafafc;
