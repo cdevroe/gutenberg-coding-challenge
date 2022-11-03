@@ -63,7 +63,7 @@ export default function Edit( { attributes, setAttributes, context } ) {
 	useEffect( () => {
 		async function getRelatedPosts() {
 			const posts = await apiFetch( {
-				path: `/wp/v2/posts?search=${ countries[ countryCode ] }&exclude=${ postId }`,
+				path: `/wp/v2/posts?_fields=id,title,excerpt&search=${ countries[ countryCode ] }&exclude=${ postId }&type=post`,
 			} ).then( ( response ) => {
 				return response;
 			} );
