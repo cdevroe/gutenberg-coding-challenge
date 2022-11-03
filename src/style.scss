@@ -27,43 +27,47 @@
 			width: 100%;
 		}
 	}
-}
-
-.xwp-country-card-flag {
-	font-size: calc(200px + 3vw);
-	line-height: 1;
-}
-
-.xwp-country-card__heading {
-	padding: 1.5rem;
-	margin: 0;
-	font-size: 2rem;
-}
-
-.xwp-country-card__related-posts {
-	border-top: 1px solid #dcdcde;
-	background-color: #fafafc;
-	padding: 1.5rem;
-}
-
-.xwp-country-card__related-posts__heading {
-	margin: 0px;
-	font-size: 1.5rem;
-}
-
-.xwp-country-card__related-posts-list {
-	padding-left: 1.5rem;
-}
-
-.related-post + .related-post {
-	margin-top: 1.5rem;
-}
-
-.related-post .title {
-	margin: 0px;
-	font-size: 1.5rem;
-}
-
-.related-post .excerpt {
-	margin: 0px;
+	
+	.xwp-country-card-flag {
+		font-size: calc(200px + 3vw);
+		line-height: 1;
+	}
+	
+	.xwp-country-card__heading {
+		padding: 1.5rem;
+		margin: 0;
+		font-size: 2rem;
+	}
+	
+	.xwp-country-card__country-code abbr {
+		border-bottom: 2px dotted #000;
+	} /* A CSS guru, I am not. */
+	
+	.xwp-country-card__related-posts {
+		border-top: 1px solid #dcdcde;
+		background-color: #fafafc;
+		padding: 1.5rem;
+	
+		.xwp-country-card__related-posts__heading {
+			margin: 0px;
+			font-size: 1.5rem;
+		}
+		
+		.xwp-country-card__related-posts-list {
+			padding-left: 1.5rem;
+		}
+		
+		.xwp-country-card__related-post + xwp-country-card__related-post {
+			margin-top: 1.5rem;
+		}
+		
+		.xwp-country-card__related-post-title {
+			margin: 0px;
+			font-size: 1.5rem;
+		}
+		
+		.xwp-country-card__related-post-excerpt {
+			margin: 0px;
+		}
+	}
 }
